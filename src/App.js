@@ -1,9 +1,18 @@
-
+// import { Heading } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/layout";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import TransactionPage from "./pages/TransactionPage";
+import WalletForm from "./components/WalletForm";
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <Router>
+      <Box className="App" width="100%" height="100vh">
+      <Navbar />
+      <Route exact path="/" component={ WalletForm }/> 
+      <Route exact path="/transaction/:name" component={ TransactionPage }/> 
+      </Box>
+    </Router>
   );
 }
 

@@ -1,7 +1,9 @@
-import { Box, Button, Flex, Heading, Select, Spacer, Divider } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Select, Spacer } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuItemOption, MenuOptionGroup, MenuDivider, MenuList } from "@chakra-ui/react";
 import { useContext } from "react";
+import { uuid } from "uuidv4";
 import { StateContext } from "../State";
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
     const  [state, dispatch]  = useContext(StateContext)
@@ -12,15 +14,36 @@ const Navbar = () => {
             </Box>
             <Spacer />
             <Box display="flex" >
-            <Select variant="flushed" placeholder="Wallets" >
+            {/* <Select variant="flushed" placeholder="Wallets" >
             {state.wallets.map((wallet) => (
-            //   <Link to={`/transaction/${wallet.name}`}>
-                <option key={Date.now()}>{wallet.name}</option>
-            //   </Link>
+                    <Link to={`/transaction/${wallet.name}`}>
+                <option key={uuid()}>
+                        {wallet.name}
+                </option>
+                    </Link>
             ))}
-                <Divider orientation="horizontal" variant="solid" colorScheme="gray" />   
                 <option>Add New Wallet</option>
-            </Select>
+            </Select> */}
+                <Menu closeOnSelect={false}>
+                    <MenuButton as={Button} colorScheme="blue">
+                        Wallets
+                </MenuButton>
+                    <MenuList minWidth="240px">
+                        <MenuOptionGroup title="Wallets" type="checkbox">
+                            {state.wallets.map((wallet) => (
+                                <Link to={`/transaction/${wallet.name}`}>
+                                 <MenuItemOption key={uuid()}>
+                                     {wallet.name}
+                                </MenuItemOption>
+                                </Link>
+                            ))}
+                        </MenuOptionGroup>
+                        <MenuDivider />
+                            <Link to="/">
+                                <MenuItemOption value="wallet" as={Button}>New Wallet</MenuItemOption>
+                            </Link>
+                    </MenuList>
+                </Menu>
             <Button variant="ghost">ABOUT</Button>
             </Box>
         </Flex>

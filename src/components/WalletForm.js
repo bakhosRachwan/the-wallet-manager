@@ -21,11 +21,11 @@ const WalletForm = () => {
                 <Stack spacing={2}>
                     <Box display="flex" justifyContent="space-between">
                         <Text>Name:</Text>
-                        <Input type="name" name="name" size="md" w="75%" placeholder="Enter Name" ref={register} />
+                        <Input type="name" name="name" size="md" w="75%" variant="filled" placeholder="Enter Name" ref={register} />
                     </Box>
                     <Box display="flex" justifyContent="space-between">
                         <Text>Currency:</Text>
-                        <Select w="75%" name="currency" ref={register}>
+                        <Select w="75%" name="currency" variant="filled" ref={register}>
                             <option>Dollar</option>
                             <option>Euro</option>
                             <option>Lebanese Pound</option>
@@ -33,11 +33,11 @@ const WalletForm = () => {
                     </Box>
                     <Box display="flex" justifyContent="space-between">
                         <Text>Balance:</Text>
-                        <Input type="number" min={0} w="75%" placeholder="Enter Initial Balance" name="balance" ref={register} />
+                        <Input type="number" min={0} w="75%" variant="filled" placeholder="Enter Initial Balance" name="balance" ref={register} />
                     </Box>
                     <Box display="flex" justifyContent="space-between">
                         <Text>Description:</Text>
-                        <Input type="text" w="75%" placeholder="Wallet Description" name="desc" ref={register} />
+                        <Input type="text" w="75%" variant="filled" placeholder="Wallet Description" name="desc" ref={register} />
                     </Box>
                     <Button type="submit" w="50%" alignSelf="center">Create Wallet</Button>
                 </Stack>
