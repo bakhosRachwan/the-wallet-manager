@@ -1,4 +1,4 @@
-import { ListItem, Text, Box } from "@chakra-ui/react";
+import { ListItem, Text, Box, Stack, Badge } from "@chakra-ui/react";
 import {
     Accordion,
     AccordionItem,
@@ -6,6 +6,7 @@ import {
     AccordionPanel,
     AccordionIcon,
   } from "@chakra-ui/react";
+import { uuid } from "uuidv4";
 
 const SingleItem = ({item}) => {
     return ( 
@@ -15,23 +16,31 @@ const SingleItem = ({item}) => {
                     <h2>
                     {item.tranType === "Income"? 
                     <AccordionButton _expanded={{ bg: "green.600", color: "white" }}>
-                        <Box flex="1" textAlign="left">
+                        <Box flex="1" textAlign="left" px="8">
                             {item.transaction}
+                        </Box>
+                        <Box px="8">
+                            {item.date}
                         </Box>
                         <AccordionIcon />
                     </AccordionButton>
                     :
-                    <AccordionButton _expanded={{ bg: "tomato", color: "white" }}>
-                        <Box flex="1" textAlign="left">
-                            {item.transaction}
+                    <AccordionButton _expanded={{ bg: "tomato", color: "white" }} >
+                        <Box flex="1" textAlign="left" px="8">
+                            {item.transaction} 
+                        </Box>
+                        <Box px="8">
+                            {item.date}
                         </Box>
                         <AccordionIcon />
                     </AccordionButton>
                     }
                     </h2>
                     <AccordionPanel pb={4}>
-                        {item.notes}
-                        {item.tags}
+                        <Text fontSize="2xl" padding="1">{item.notes}</Text>
+                        <Stack direction="row" margin="2">
+                        {item.tags.split(",").map(badge => <Badge key={uuid()} >{badge}</Badge>)}
+                        </Stack>
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>

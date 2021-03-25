@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Select, Spacer } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Spacer } from "@chakra-ui/react";
 import { Menu, MenuButton, MenuItemOption, MenuOptionGroup, MenuDivider, MenuList } from "@chakra-ui/react";
 import { useContext } from "react";
 import { uuid } from "uuidv4";
@@ -8,22 +8,12 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
     const  [state, dispatch]  = useContext(StateContext)
     return ( 
-        <Flex p="2" >
+        <Flex p="2" mb="2" >
             <Box>
-                <Heading as="h1">Wallet Manager</Heading>
+                <Heading fontSize={{sm:"4xl", md: "4xl"}}>Wallet Manager</Heading>
             </Box>
             <Spacer />
             <Box display="flex" >
-            {/* <Select variant="flushed" placeholder="Wallets" >
-            {state.wallets.map((wallet) => (
-                    <Link to={`/transaction/${wallet.name}`}>
-                <option key={uuid()}>
-                        {wallet.name}
-                </option>
-                    </Link>
-            ))}
-                <option>Add New Wallet</option>
-            </Select> */}
                 <Menu closeOnSelect={false}>
                     <MenuButton as={Button} colorScheme="blue">
                         Wallets
