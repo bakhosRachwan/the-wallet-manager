@@ -1,4 +1,4 @@
-import { Avatar, AvatarBadge, Flex } from "@chakra-ui/react";
+import { Avatar, AvatarBadge } from "@chakra-ui/react";
 import { Box, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { useParams } from "react-router";
@@ -15,8 +15,7 @@ const TransactionPage = () => {
     const totalBalance = parseInt(initBalance[0].balance) + income - expense
     const condition = totalBalance < 0
     return (
-        <Flex>
-        <Box display="flex" flexDirection="column" border="1px" w="85%">
+        <Box display="flex" flexDirection="column">
             <Box display="flex">
             <Avatar name={name} alignSelf="center" >
                 <AvatarBadge boxSize="1.25em" bg={condition ? "red.500": "green.500"} />
@@ -26,8 +25,6 @@ const TransactionPage = () => {
             <Box p="8"><TransactionForm  /></Box>
             <ListSection/>
         </Box>
-            <Box alignSelf="end" width="250px" h="700px" bg="blue">hello</Box>
-        </Flex>
      );
 }
  
