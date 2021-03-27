@@ -44,7 +44,18 @@ const WalletForm = () => {
                         <Text>Description:</Text>
                         <Input type="text" w="75%" variant="filled" placeholder="Wallet Description" name="desc" ref={register} required  />
                     </Box>
-                    <Button type="submit" w="50%" alignSelf="center" colorScheme="blue">Create Wallet</Button>
+                    <Button 
+                        type="submit" 
+                        w="50%" 
+                        alignSelf="center" 
+                        colorScheme="blue"
+                        _hover={{
+                            // bgGradient: "radial( #ff5f6d, #ffc371)",
+                            // bg: "green.600", 
+                            boxShadow: "outline",
+                        }}
+                        >Create Wallet
+                    </Button>
                 </Stack>
             </form>
         </Box>

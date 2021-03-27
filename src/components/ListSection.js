@@ -6,7 +6,7 @@ import { uuid } from "uuidv4";
 import { useParams } from "react-router";
 const ListSection = () => {
     const { name } = useParams()
-    const [state, dispatch] = useContext(StateContext)
+    const [state] = useContext(StateContext)
     return ( 
         <Box  display="flex" flexDirection="column" alignItems="center">
             <Heading mt="10" mb="10" fontSize={{sm:"4xl", md: "4xl"}}>All Transactions Recorded</Heading>

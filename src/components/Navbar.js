@@ -6,7 +6,7 @@ import { StateContext } from "../State";
 import { Link } from "react-router-dom"
 
 const Navbar = () => {
-    const  [state, dispatch]  = useContext(StateContext)
+    const  [state]  = useContext(StateContext)
     return ( 
         <Flex p="2" mb="2" >
             <Box>
