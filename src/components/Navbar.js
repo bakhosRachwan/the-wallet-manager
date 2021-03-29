@@ -4,13 +4,14 @@ import { useContext } from "react";
 import { uuid } from "uuidv4";
 import { StateContext } from "../State";
 import { Link } from "react-router-dom"
-
+import { GiWallet } from "react-icons/gi";
 const Navbar = () => {
     const  [state]  = useContext(StateContext)
     return ( 
         <Flex p="2" mb="2" >
-            <Box>
-                <Heading fontSize={{sm:"4xl", md: "4xl"}}>Wallet Manager</Heading>
+            <Box display="flex">
+                <GiWallet size="3rem" />
+                <Heading fontSize={{sm:"4xl", md: "4xl"}} ml="2"> Wallet Manager</Heading>
             </Box>
             <Spacer />
             <Box display="flex" >
