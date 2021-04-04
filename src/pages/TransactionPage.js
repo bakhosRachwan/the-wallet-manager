@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import ListSection from "../components/ListSection";
 import TransactionForm from "../components/TransactionForm";
 import { StateContext } from "../State";
+import { Link } from "react-router-dom";
 
 const TransactionPage = () => {
     const [state] = useContext(StateContext);
@@ -18,7 +19,9 @@ const TransactionPage = () => {
         <Box display="flex" flexDirection="column">
             <Box display="flex">
             <Avatar name={name} alignSelf="center" >
+            <Link to={`/user/${name}`}>
                 <AvatarBadge boxSize="1.25em" bg={condition ? "red.500": "green.500"} />
+            </Link>
             </Avatar>
             <Text fontSize={{sm: "4xl", md:"5xl"}} ml="5%">Balance: {totalBalance} {initBalance[0].currency} </Text>
             </Box>
