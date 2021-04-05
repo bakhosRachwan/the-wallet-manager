@@ -13,7 +13,8 @@ const SignUp = ({ history }) => {
         .createUserWithEmailAndPassword(email.value, password.value);
       history.push("/");
     } catch (error) {
-      alert(error);
+        alert(error);
+        history.push("/login");
     }
   }, [history]);
 
