@@ -12,7 +12,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Box className="App" width="100%" height="100vh" p="8">
+        <Box className="App" width="100%" height="100vh" p="8" bgGradient="linear(to-r, #A9C9FF, #FFBBEC)">
         <Navbar />
         <Route exact path="/signup" component={ SignUp } />
         <Route exact path="/login" component={ Login } />

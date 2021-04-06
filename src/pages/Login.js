@@ -16,6 +16,7 @@ const Login = ({ history }) => {
         history.push("/");
       } catch (error) {
         alert(error);
+        history.push("/signup");
       }
     },
     [history]
@@ -29,7 +30,7 @@ const Login = ({ history }) => {
 
   return (
     <Box h="90%" p="2" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-      <Text>Log in</Text>
+      <Text fontSize={{sm:"4xl", md: "4xl"}}>Log in</Text>
       <form onSubmit={handleLogin}>
       <Stack spacing={2}>
         <Text>

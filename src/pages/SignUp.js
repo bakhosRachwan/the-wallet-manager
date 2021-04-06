@@ -19,8 +19,8 @@ const SignUp = ({ history }) => {
   }, [history]);
 
   return (
-    <Box h="90%" p="2" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-      <Text>Sign up</Text>
+    <Box h="90%" p="2" display="flex" flexDirection="column" alignItems="center" justifyContent="center" >
+      <Text fontSize={{sm:"4xl", md: "4xl"}}>Sign up</Text>
       <form onSubmit={handleSignUp}>
         <Stack>
             <Text>
@@ -32,6 +32,8 @@ const SignUp = ({ history }) => {
             <Input name="password" type="password" placeholder="Password" />
             </Text>
             <Button type="submit">Sign Up</Button>
+            <hr />
+            <Button onClick={()=> history.push("/login")}>Login</Button>
         </Stack>
       </form>
     </Box>
